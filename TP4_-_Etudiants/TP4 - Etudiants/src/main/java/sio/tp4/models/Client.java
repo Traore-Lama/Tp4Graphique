@@ -65,6 +65,13 @@ public class Client
 
     public boolean verifValeur(int valeur)
     {
-        return true;
+        if (releves.getLast().getValeurReleve() > valeur)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

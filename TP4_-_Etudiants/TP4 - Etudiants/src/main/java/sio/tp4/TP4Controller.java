@@ -58,7 +58,6 @@ public class TP4Controller implements Initializable {
         // Les Colones des agents
         tcNumeroAgent.setCellValueFactory(new PropertyValueFactory<>("numero"));
         tcNomAgent.setCellValueFactory(new PropertyValueFactory<>("nom"));
-        tvAgents.setItems(FXCollections.observableList(agents));
 
         // Les Colones des clients
         tcNumeroClient.setCellValueFactory(new PropertyValueFactory<>("numero"));
@@ -117,6 +116,7 @@ public class TP4Controller implements Initializable {
     @FXML
     public void btnInsererClicked(Event event)
     {
+
         if (tvClients.getSelectionModel().getSelectedItem() == null)
         {
             alert.setContentText("Veuillez entrer un nouveau Client");
@@ -126,7 +126,9 @@ public class TP4Controller implements Initializable {
         {
             alert.setContentText("Entrer un releve");
             alert.show();
-        } else if (tvClients.getSelectionModel().getSelectedItem().verifValeur(Integer.parseInt(txtNouveauReleve.getText())))
+
+        }
+        else if (tvClients.getSelectionModel().getSelectedItem().verifValeur(Integer.parseInt(txtNouveauReleve.getText())))
         {
             alert.setContentText("Valeur trop petite");
             alert.show();
